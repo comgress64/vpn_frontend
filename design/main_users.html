@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="assets/css/app.min.css" rel="stylesheet">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<script src="assets/js/libs.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
+	</head>
+	<body>
+		<section id="header">
+			<script>
+				$('#header').load('parts/general/header.html');
+			</script>
+		</section>
+		<section id="new-main">
+			<div id="content">
+				<main>
+
+					<div class="container-fluid">
+						<div class="row">
+
+							<!-- BEGIN side navigation -->
+							<style>
+							.sidenav { text-align: center; }
+							.sidenav button { width: 100%; max-width: 200px; }
+							</style>
+							<div class="col-xs-12 col-md-2 sidenav">
+								<p>
+								<a href="main_companies.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-building-o"></i> Companies
+								</a>
+								</p>
+								<p>
+								<a href="main_users.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-users"></i> Users
+								</a>
+								</p>
+								<p>
+								<a href="main_devices.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-desktop"></i> Devices
+								</a>
+								</p>
+							</div>
+							<!-- END side navigation -->
+
+							<!-- BEGIN side navigation -->
+							<div class="col-xs-12 col-md-10">
+
+								<!-- BEGIN content head-->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="page-title">
+											Users
+										</div>
+										<div class="breadcrumbs">
+											<a href="index.html"><i class="fa fa-home"></i>Home</a>
+											<span>Users</span>
+										</div>
+									</div>
+								</div>
+								<!-- END content head-->
+
+								<!-- BEGIN filter -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="box icon">
+											<div class="box-head">
+												<i class="fa fa-search"></i>Filter
+												<div class="actions pull-right">
+													<a class="btn btn-default btn-xs btn-collapse"> <i class="fa fa-plus"></i> </a>
+												</div>
+											</div>
+											<div class="box-body" style="display: none">
+												<div class="row">
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label for="filter_name">Name</label>
+															<input type="text" class="form-control" id="filter_name">
+														</div>
+														<div class="form-group">
+															<label for="filter_email">E-mail</label>
+															<input type="text" class="form-control" id="filter_email">
+														</div>
+													</div>
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label for="filter_address">Address</label>
+															<input type="text" class="form-control" id="filter_address">
+														</div>
+														<div class="form-group">
+															<label for="filter_comment">Comment</label>
+															<input type="text" class="form-control" id="filter_comment">
+														</div>
+													</div>
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label>Company</label>
+															<select class="form-control">
+																<option>Any (default)</option>
+																<option>Store #1</option>
+															</select>
+														</div>
+														<div class="form-group">
+															<label>Role</label>
+															<select class="form-control">
+																<option>Any (default)</option>
+																<option>Manager</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="page-actions pull-right">
+															<!--
+															<div class="btn-group">
+																<button type="button" class="btn btn-default btn-md btn-icon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	Saved Filters <span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu">
+																	<li><a href="#">Filter Name 1</a></li>
+																	<li><a href="#">Filter Name 2</a></li>
+																	<li><a href="#">Filter Name 3</a></li>
+																	<li><a href="#">Filter Name 4</a></li>
+																</ul>
+															</div>
+															<button type="button" class="btn btn-default btn-md btn-icon" data-toggle="modal" data-target="#saveFilter">
+																<i class="fa fa-save"></i>Save Filter
+															</button>
+															-->
+															<button type="button" class="btn btn-default btn-md btn-icon">
+																<i class="fa fa-close"></i>Clear
+															</button>
+															<button type="button" class="btn btn-primary btn-md btn-icon">
+																<i class="fa fa-search"></i>Filter
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END filter -->
+
+								<!-- BEGIN content-->
+								<div class="row">
+
+									<div class="col-xs-12">
+										<div id="matching-results" class="matching-results">
+											Number of Matching Records: <span class="matching-results__number">25</span>
+										</div>
+									</div>
+
+									<div class="col-xs-12">
+										<div class="page-title">
+											<div class="actions">
+												<a href="#" data-toggle="modal" data-target="#modalAdd" class="btn btn-success btn-md btn-icon"><i class="fa fa-plus-circle"></i> New user</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-xs-12">
+										<table id="usersTable" class="table table-stripped">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Phone</th>
+													<th>E-mail</th>
+													<th>Company</th>
+													<th>Role</th>
+													<th>Devices</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Jonh Doe</td>
+													<td>+1 111 11 111-11-11</td>
+													<td>johny@storeone.com</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Google Inc.</a></td>
+													<td>Admin</td>
+													<td>3/5</td>
+												</tr>
+												<tr>
+													<td>Emma Watson</td>
+													<td>+2 222 22 333-33-22</td>
+													<td>emma@googleinc.com</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Google Inc.</a></td>
+													<td>Manager</td>
+													<td>9/15</td>
+												</tr>
+												<tr>
+													<td>Brian Cranston</td>
+													<td>+2515 5123 52522</td>
+													<td>brian.cranston@school.edu</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Middle School</a></td>
+													<td>Teacher</td>
+													<td>1/2</td>
+												</tr>
+												<tr>
+													<td>Brian Cranston</td>
+													<td>+555 555 55 55-55-55</td>
+													<td>say.my.name@pollos.de</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Los pollos hermanos</a></td>
+													<td>Manager</td>
+													<td>5/5</td>
+												</tr>
+												<tr>
+													<td>Jonh Doe</td>
+													<td>+1 111 11 111-11-11</td>
+													<td>johny@storeone.com</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Google Inc.</a></td>
+													<td>Admin</td>
+													<td>3/5</td>
+												</tr>
+												<tr>
+													<td>Emma Watson</td>
+													<td>+2 222 22 333-33-22</td>
+													<td>emma@googleinc.com</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Google Inc.</a></td>
+													<td>Manager</td>
+													<td>9/15</td>
+												</tr>
+												<tr>
+													<td>Brian Cranston</td>
+													<td>+2515 5123 52522</td>
+													<td>brian.cranston@school.edu</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Middle School</a></td>
+													<td>Teacher</td>
+													<td>1/2</td>
+												</tr>
+												<tr>
+													<td>Brian Cranston</td>
+													<td>+555 555 55 55-55-55</td>
+													<td>say.my.name@pollos.de</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">Los pollos hermanos</a></td>
+													<td>Manager</td>
+													<td>5/5</td>
+												</tr>
+											</tbody>
+										</table>
+										<!--
+										<script>
+											$(document).ready(function() {
+												$('#usersTable').DataTable({
+													"fnInitComplete": function(settings) {
+														var selector = settings.oInstance.selector + "_filter";
+														var $searchForm = '<div class="form-inline">' +
+															'<div class="input-group">' +
+															'<span class="input-group-btn">' +
+															'<button class="btn btn-primary btn-sm" type="button">' +
+															'<i class="fa fa-search"></i>' +
+															'</button>' +
+															'</span>' +
+															'<input type="text" data-table-instance="' + settings.oInstance.selector + '" class="form-control input-sm" placeholder="Search for...">' +
+															'</div>' +
+															'</div>';
+														$(selector).html($searchForm);
+														$(selector).find('input').keypress(function(e) {
+															if (e.which == 13) $($(selector).find('input').data('table-instance')).DataTable().search($(selector).find('input').val()).draw();
+														});
+														$(selector).find('button').click(function() {
+															$($(selector).find('input').data('table-instance')).DataTable().search($(selector).find('input').val()).draw();
+														});
+														var exportButton = '<div class="input-group"><a href="#." class="btn btn-primary btn-sm btn-icon"><i class="fa fa-download"></i>Export</a></div>';
+														$(selector).find('.form-inline').prepend(exportButton);
+													}
+												});
+											});
+										</script>
+										-->
+									</div>
+
+								</div>
+								<!-- END content-->
+
+							</div>
+						</div>
+					</div>
+
+					<!-- BEGIN modal -->
+					<div id="modalProfile" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close"
+										data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Profile</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="profile_firstName">First Name</label>
+										<input type="text" class="form-control" id="profile_firstName">
+									</div>
+									<div class="form-group">
+										<label for="profile_secondName">Last Name</label>
+										<input type="text" class="form-control" id="profile_secondName">
+									</div>
+									<div class="form-group">
+										<label for="profile_email">E-mail</label>
+										<input type="text" class="form-control" id="profile_email">
+									</div>
+									<div class="form-group">
+										<label for="profile_password">Password</label>
+										<input type="password" class="form-control" id="profile_password">
+									</div>
+									<div class="form-group">
+										<label for="profile_confirmPassword">Confirm Password</label>
+										<input type="password" class="form-control" id="profile_confirmPassword">
+									</div>
+									<div class="form-group">
+										<label for="profile_phone">Phone</label>
+										<input type="text" class="form-control" id="profile_phone">
+									</div>
+									<div class="form-group">
+										<label for="profile_mobile">Mobile</label>
+										<input type="text" class="form-control" id="profile_mobile">
+									</div>
+									<div class="form-group">
+										<p>
+										Get VPN Key: <a href="#">download</a>
+										</p>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="modalAdd" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close"
+										data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Add user</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="add_firstName">First Name</label>
+										<input type="text" class="form-control" id="add_firstName">
+									</div>
+									<div class="form-group">
+										<label for="add_lastName">Last Name</label>
+										<input type="text" class="form-control" id="add_lastName">
+									</div>
+									<div class="form-group">
+										<label for="add_phone">Phone</label>
+										<input type="text" class="form-control" id="add_phone">
+									</div>
+									<div class="form-group">
+										<label for="add_email">E-mail</label>
+										<input type="text" class="form-control" id="add_email">
+									</div>
+									<div class="form-group">
+										<label for="add_role">Role</label>
+										<select class="form-control" id="add_role" tgt="add_company">
+											<option value="super">Super Admin</option>
+											<option value="admin">Admin</option>
+											<option value="user">User</option>
+										</select>
+									</div>
+									<div class="form-group" style="display: none;">
+										<label for="add_company">Company</label>
+										<select class="form-control" id="add_company">
+											<option>Store #1</option>
+											<option>Store #2</option>
+											<option>Store #3</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="add_maxDevices">Max. devices available</label>
+										<input type="text" class="form-control" id="add_maxDevices">
+									</div>
+									<div class="form-group">
+										<p><strong>Permissions</strong></p>
+										<div class="row">
+											<div class="col-xs-4">
+										<input type="checkbox" class="pull-left" id="add_permissionLoginToWebInterface">
+										<label for="add_permissionLoginToWebInterface">Login to web interface</label>	
+											</div>
+											<div class="col-xs-4">
+										<input type="checkbox" class="pull-left" id="add_permissionManageCompanies">
+										<label for="add_permissionManageCompanies">Manage companies</label>
+											</div>
+											<div class="col-xs-4">
+										<input type="checkbox" class="pull-left" id="add_permissionManageDevices">
+										<label for="add_permissionManageDevices">Manage devices</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-success" data-dismiss="modal">Add</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="modalEdit" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close"
+										data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Edit user</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="edit_firstName">First Name</label>
+										<input type="text" class="form-control" id="edit_firstName" value="John">
+									</div>
+									<div class="form-group">
+										<label for="edit_lastName">Last Name</label>
+										<input type="text" class="form-control" id="edit_lastName" value="Doe">
+									</div>
+									<div class="form-group">
+										<label for="edit_phone">Phone</label>
+										<input type="text" class="form-control" id="edit_phone" value="+5 555 555 55-5-55">
+									</div>
+									<div class="form-group">
+										<label for="edit_email">E-mail</label>
+										<input type="text" class="form-control" id="edit_email" value="johny@google.com">
+									</div>
+									<div class="form-group">
+										<label for="edit_role">Role</label>
+										<select class="form-control" id="edit_role" tgt="edit_company">
+											<option value="super">Super Admin</option>
+											<option value="admin">Admin</option>
+											<option value="user">User</option>
+										</select>
+									</div>
+									<div class="form-group" style="display: none;">
+										<label for="edit_company">Company</label>
+										<select class="form-control" id="edit_company">
+											<option>Store #1</option>
+											<option>Store #2</option>
+											<option>Store #3</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="edit_maxDevices">Max. devices available</label>
+										<input type="text" class="form-control" id="edit_maxDevices">
+									</div>
+									<div class="form-group">
+										<p><strong>Permissions</strong></p>
+										<div class="row">
+											<div class="col-xs-4">
+										<input type="checkbox" class="pull-left" id="edit_permissionLoginToWebInterface">
+										<label for="edit_permissionLoginToWebInterface">Login to web interface</label>	
+											</div>
+											<div class="col-xs-4">
+										<input type="checkbox" class="pull-left" id="edit_permissionManageCompanies">
+										<label for="edit_permissionManageCompanies">Manage companies</label>
+											</div>
+											<div class="col-xs-4">
+										<input type="checkbox" class="pull-left" id="edit_permissionManageDevices">
+										<label for="edit_permissionManageDevices">Manage devices</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<p>
+										Get VPN Key: <a href="#">download</a>
+										</p>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Remove</button>
+									<button type="button" class="btn btn-default">Reset</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END modal -->
+
+					<script>
+						$(document).ready(function(){
+							$('#add_role, #edit_role').change(function(){
+								var value = $(this).val();
+								var tgt = $('#' + $(this).attr('tgt'));
+
+								if (value === 'super') {
+									tgt.parent().hide();
+									tgt.removeAttr('multiple');
+								}
+
+								if (value === 'admin') {
+									tgt.parent().show();
+									tgt.attr('multiple', 'multiple');
+								}
+
+								if (value === 'user') {
+									tgt.parent().show();
+									tgt.removeAttr('multiple');
+								}
+							});
+						});
+					</script>
+
+				</main>
+			</div>
+		</section>
+		<section id="footer">
+			<footer class="vertical-align">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-8 col-xs-offset-2 text-center">
+							© 2017 Copyright. Not for distribution to third parties.
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+				$('#footer').load('parts/general/footer.html');
+			</script>
+		</section>
+	</body>
+</html>

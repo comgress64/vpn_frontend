@@ -1,0 +1,21 @@
+{
+    "name": "vpn/vpn-api",
+    "description": "Wrapper for vpn-api",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Stas Karpov",
+            "email": "staskjs@mail.ru"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-4": {
+        }
+    }
+
+}

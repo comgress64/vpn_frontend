@@ -1,0 +1,53 @@
+.btn {
+	&.btn-md {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+	&.btn-icon {
+		.fa {
+			margin-right: 6px;
+			font-size: 18px;
+			position: relative;
+			top: 2px;
+		}
+		i {
+			margin-right: 15px;
+		}
+
+		&.btn-sm {
+			i {
+				font-size: 14px !important;
+			}
+		}
+	}
+
+	&.btn-icon-v {
+		padding: 30px 50px;
+		font-size: 20px;
+		font-weight: 300;
+
+		i {
+			font-size: 40px;
+			display: block;
+			margin-bottom: 5px;
+		}
+	}
+	//&.btn-success {
+	//	background: linear-gradient(to top, #2CB25A, #48BF66);
+	//	border-color: #40A865;
+	//}
+	//&.btn-primary {
+	//	background: linear-gradient(to top, #2C84B0, #3398CB);
+	//	border-color: #2C86B3;
+	//}
+	//&.btn-default {
+	//	background-color: #F2F3F7;
+	//	border-color: #DDD;
+	//	color: $font-color;
+	//}
+	//&.btn-white {
+	//	background-color: #fff;
+	//	border-color: #DDD;
+	//	color: $font-color;
+	//}
+}

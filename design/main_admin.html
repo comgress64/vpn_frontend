@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="assets/css/app.min.css" rel="stylesheet">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<script src="assets/js/libs.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
+	</head>
+	<body>
+		<section id="header">
+			<script>
+				$('#header').load('parts/general/header.html');
+			</script>
+		</section>
+		<section id="new-main">
+			<div id="content">
+				<main>
+
+					<div class="container-fluid">
+						<div class="row">
+
+							<!-- BEGIN side navigation -->
+							<style>
+							.sidenav { text-align: center; }
+							.sidenav button { width: 100%; max-width: 200px; }
+							</style>
+							<div class="col-xs-12 col-md-2 sidenav">
+								<p>
+								<a href="main_companies.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-building-o"></i> Companies
+								</a>
+								</p>
+								<p>
+								<a href="main_devices.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-desktop"></i> Devices
+								</a>
+								</p>
+							</div>
+							<!-- END side navigation -->
+
+							<div class="col-xs-12 col-md-10">
+
+								<!-- BEGIN content head-->
+								<div class="row">
+									<div class="col-xs-12 col-md-5 col-md-offset-1">
+										<div class="page-title">
+											<i class="fa fa-bar-chart"></i> Statistics
+										</div>
+									</div>
+								</div>
+								<!-- END content head -->
+
+								<!-- END content -->
+								<div class="row">
+									<div class="col-xs-12 col-md-5 col-md-offset-1">
+										<style>
+										.stats td { font-size: 16px; }
+										</style>
+										<table class="table table-stripped stats">
+										<tr>
+										<td><a href="main_companies.html">100</a></td>
+										<td>companies</td>
+										</tr>
+										<tr>
+										<td><a href="main_devices.html">10500</a></td>
+										<td>devices</td>
+										</tr>
+										</table>
+									</div>
+								</div>
+								<!-- END content -->
+
+							</div>
+						</div>
+					</div>
+
+					<!-- BEGIN modal -->
+					<div id="modalProfile" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close"
+										data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Profile</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="profile_firstName">First Name</label>
+										<input type="text" class="form-control" id="profile_firstName">
+									</div>
+									<div class="form-group">
+										<label for="profile_secondName">Last Name</label>
+										<input type="text" class="form-control" id="profile_secondName">
+									</div>
+									<div class="form-group">
+										<label for="profile_email">E-mail</label>
+										<input type="text" class="form-control" id="profile_email">
+									</div>
+									<div class="form-group">
+										<label for="profile_password">Password</label>
+										<input type="text" class="form-control" id="profile_password">
+									</div>
+									<div class="form-group">
+										<label for="profile_confirmPassword">Confirm Password</label>
+										<input type="text" class="form-control" id="profile_confirmPassword">
+									</div>
+									<div class="form-group">
+										<label for="profile_phone">Phone</label>
+										<input type="text" class="form-control" id="profile_phone">
+									</div>
+									<div class="form-group">
+										<label for="profile_mobile">Mobile</label>
+										<input type="text" class="form-control" id="profile_mobile">
+									</div>
+									<div class="form-group">
+										<p>
+										Get VPN Key: <a href="#">download</a>
+										</p>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">Close
+									</button>
+									<button type="button" class="btn btn-primary"
+										data-dismiss="modal">Save
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END modal -->
+
+				</main>
+			</div>
+		</section>
+		<section id="footer">
+			<footer class="vertical-align">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-8 col-xs-offset-2 text-center">
+							© 2017 Copyright. Not for distribution to third parties.
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+				$('#footer').load('parts/general/footer.html');
+			</script>
+		</section>
+	</body>
+</html>

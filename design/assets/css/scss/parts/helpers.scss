@@ -1,0 +1,21 @@
+.vertical-align {
+	@media (min-width: 640px) {
+		display: flex !important;
+		align-items: center;
+	}
+
+	&.always {
+		display: flex !important;
+		align-items: center;
+	}
+}
+
+.align-middle {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.nopadding {
+	padding: 0;
+}

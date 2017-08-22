@@ -1,0 +1,1497 @@
+/* ======================================== >>>>> */
+/* = Imports = */
+/* ======================================== >>>>> */
+@import "colors.scss";
+@import "bourbon";
+
+/* ======================================== >>>>> */
+/* = Main = */
+/* ======================================== >>>>> */
+
+main {
+	margin-bottom: 20px;
+	
+	/* ----- Page header ----- */
+	.page-title {
+		font-size: 23px;
+		font-weight: 800;
+		margin-bottom: 20px;
+		color: $font-color-primary;
+		span {
+			color: $primary-color;
+		}
+		
+		& > i {
+			font-weight: 300;
+			margin-left: 10px;
+			font-style: normal;
+			font-size: 18px;
+		}
+		
+		.actions {
+			//margin-left: 20px;
+			display: inline-block;
+			margin-bottom: 15px;
+		}
+	}
+	/* ----- End of Page header ----- */
+	
+	/* ----- Page actions ----- */
+	.page-actions {
+		margin-bottom: 20px;
+		a {
+			margin-right: 2px;
+		}
+		
+		.btn-group {
+			margin-right: 2px;
+		}
+	}
+	/* ----- End of Page actions ----- */
+	
+	.page-head {
+		margin-bottom: 25px;
+		border: 0;
+	}
+	
+	.pagination {
+		margin: 0;
+	}
+	
+	/* ----- Tables ----- */
+	.table {
+		border: 1px solid #DDDDDD;
+		border-radius: 5px;
+		border-collapse: separate;
+		text-align: left;
+		&.table-linked {
+			tr {
+				cursor: pointer;
+			}
+		}
+		&.table-white {
+			thead {
+				th {
+					background-color: #DDDDDD;
+					border-right: 1px solid $primary-bg;
+				}
+			}
+			tbody {
+				td {
+					background-color: #FFFFFF !important;
+				}
+			}
+		}
+		thead, tfoot {
+			th {
+				border-right: 1px solid #DDDDDD;
+				padding: 5px 5px !important;
+				background-color: #F2F3F7;
+				color: $font-color-primary;
+				border-bottom: 0 solid #DDDDDD;
+				&:last-child {
+					border-right: 0;
+				}
+			}
+		}
+		tbody {
+			font-size: 13px;
+			
+			tr {
+				&:nth-child(2n) {
+					td {
+						//background-color: $primary-bg;
+					}
+				}
+				&:last-child {
+					td {
+						border-bottom: 0;
+					}
+				}
+				td {
+					border-right: 1px solid #DDDDDD;
+					padding: 5px 5px !important;
+					color: $font-color;
+					&:last-child {
+						border-right: 0;
+					}
+					&.success {
+						background-color: #DFF0D8;
+					}
+					&.danger {
+						background-color: #F2DEDE;
+					}
+					&.warning {
+						background-color: #FCF8E3;
+					}
+				}
+			}
+		}
+	}
+	/* ----- End of Tables ----- */
+	
+	/* >>>>> ======================================== */
+	/* = Contact pane = */
+	.contact-pane {
+		//overflow: hidden;
+		margin-bottom: 25px;
+		height: 340px;
+		.contact-profile {
+			background-color: $primary-bg;
+			border: 1px solid #DDDDDD;
+			height: 100%;
+			padding-top: 30px;
+			.avatar {
+				img {
+					border-radius: 50%;
+				}
+			}
+			.info {
+				padding-left: 0;
+			}
+			.name {
+				color: $primary-color;
+				font-weight: 500;
+				font-size: 22px;
+			}
+			.company {
+				color: $font-color-primary;
+				font-size: 18px;
+			}
+		}
+		.contact-info {
+			border: 1px solid #DDDDDD;
+			height: 100%;
+			padding-top: 30px;
+			padding-left: 50px;
+			.fields {
+				.row {
+					margin-bottom: 15px;
+				}
+				.field {
+					color: $font-color-primary;
+					font-weight: 500;
+					font-size: 16px;
+				}
+				.content {
+					font-size: 16px;
+					padding-left: 0;
+					border-bottom: 1px solid #DDDDDD;
+				}
+				.tags {
+					a {
+						display: inline-block;
+						font-size: 11px;
+						background-color: rgba(#F7E402, 0.50);
+						padding: 5px;
+						border-radius: 5px;
+						margin-right: 3px;
+						margin-bottom: 5px;
+						
+						&:hover, &:focus, &:active {
+							text-decoration: none;
+							background-color: rgba(#F7E402, 1);
+						}
+					}
+				}
+			}
+		}
+		.actions {
+			.action {
+				display: inline-block;
+				padding: 16px 30px;
+				background-color: $primary-bg;
+				border: 1px solid #DDDDDD;
+				margin-right: 10px;
+				label {
+					margin: 0;
+					font-weight: 400;
+				}
+				input {
+					margin: 0 10px 0 0;
+				}
+			}
+		}
+	}
+	/* = End of Contact pane = */
+	/* <<<<< ======================================== */
+	
+	/* >>>>> ======================================== */
+	/* = Activities = */
+	.activities {
+		.tabs {
+			.tabs-title {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: relative;
+				&:after {
+					height: 2px;
+					position: absolute;
+					background-color: #DDDDDD;
+					width: 100%;
+					content: "";
+					left: 0;
+					bottom: 0;
+					display: block;
+				}
+				li {
+					display: inline-block;
+					padding: 15px 20px;
+					font-weight: 500;
+					font-size: 16px;
+					position: relative;
+					&:after {
+						height: 3px;
+						position: absolute;
+						background-color: $primary-color;
+						width: 100%;
+						content: "";
+						left: 0;
+						bottom: -1px;
+						display: none;
+						z-index: 1;
+					}
+					&:hover {
+						cursor: pointer;
+						color: $primary-color;
+						&:after {
+							display: block;
+						}
+					}
+					&.active {
+						color: $primary-color;
+						&:after {
+							display: block;
+						}
+					}
+				}
+			}
+			.tabs-content {
+				display: none;
+				background-color: $primary-bg;
+				padding: 20px;
+				border: 1px solid #DDDDDD;
+				p {
+					margin: 0;
+					color: #666666;
+					font-size: 13px;
+					line-height: 1.5;
+				}
+				&.active {
+					display: block;
+				}
+			}
+		}
+		.actions {
+			margin-bottom: 20px;
+		}
+		.notes {
+			.input {
+				margin-bottom: 20px;
+			}
+			.history {
+				.title-line {
+					position: relative;
+					z-index: 1;
+					text-align: center;
+					margin-bottom: 15px;
+					&:before {
+						border-top: 1px solid #DFDFDF;
+						content: "";
+						margin: 0 auto;
+						position: absolute;
+						top: 50%;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						width: 100%;
+						z-index: -1;
+					}
+					span {
+						background-color: $primary-bg;
+						padding: 0 15px;
+						font-weight: 500;
+					}
+				}
+				.items {
+					.item {
+						margin-bottom: 20px;
+						.avatar {
+							padding-right: 0;
+							img {
+								border-radius: 50%;
+								border: 1px solid $primary-color;
+							}
+						}
+						.note {
+							background-color: #FFFFFF;
+							border-radius: 5px;
+							padding: 10px;
+							position: relative;
+							&:before {
+								content: "";
+								position: absolute;
+								left: -10px;
+								top: 50%;
+								transform: translateY(-50%);
+								width: 0;
+								height: 0;
+								border-style: solid;
+								border-width: 7.5px 10px 7.5px 0;
+								border-color: transparent #FFFFFF transparent transparent;
+							}
+							.info {
+								font-size: 12px;
+							}
+							.content {
+								font-weight: 500;
+							}
+						}
+					}
+				}
+			}
+		}
+		.marketing-campaigns {
+			.Yes {
+				color: green;
+			}
+			.No {
+				color: red;
+			}
+		}
+		.activity {
+			// No info
+		}
+		.purchases {
+			.deadline-info {
+				background-color: #FFFFFF;
+				border-radius: 5px;
+				border: 1px solid #DDDDDD;
+				padding: 10px;
+				.content {
+					display: inline-block;
+					width: 55%;
+					vertical-align: middle;
+					margin-right: 20px;
+					color: $font-color-primary;
+					font-weight: 500;
+				}
+				.date {
+					display: inline-block;
+					vertical-align: middle;
+					font-size: 22px;
+					text-align: right;
+					position: relative;
+					font-weight: 500;
+					&:after {
+						display: block;
+						width: 100%;
+						height: 3px;
+						position: absolute;
+						content: "";
+						background-color: $primary-color;
+						bottom: -14px;
+					}
+					&.success {
+						&:after {
+							background-color: green;
+						}
+					}
+				}
+			}
+		}
+		.loyalty-programs {
+			.checkbox-circle {
+				height: 0;
+				position: relative;
+				display: inline-block;
+				margin-right: 15px;
+				&:checked {
+					&:before {
+						color: #EE2425;
+					}
+				}
+				&:before {
+					cursor: pointer;
+					font-family: FontAwesome;
+					content: "\f111";
+					font-size: 22px;
+					position: absolute;
+					color: #D8DADC;
+					top: -16px;
+				}
+			}
+			.checkbox-star {
+				height: 0;
+				position: relative;
+				display: inline-block;
+				&:checked {
+					&:before {
+						color: #FFD556;
+					}
+				}
+				&:before {
+					cursor: pointer;
+					font-family: FontAwesome;
+					content: "\f005";
+					font-size: 25px;
+					position: absolute;
+					color: #D8DADC;
+					top: -16px;
+				}
+			}
+			.checkbox-square {
+				height: 0;
+				position: relative;
+				display: inline-block;
+				margin-right: 15px;
+				&:checked {
+					&:before {
+						color: #EE2425;
+					}
+				}
+				&:before {
+					cursor: pointer;
+					font-family: FontAwesome;
+					content: "\f0c8";
+					font-size: 22px;
+					position: absolute;
+					color: #D8DADC;
+					top: -16px;
+				}
+			}
+			.checkbox-number {
+				height: 0;
+				position: relative;
+				display: inline-block;
+				margin-right: 10px;
+				&:checked {
+					&:before {
+						background-color: $primary-color;
+					}
+				}
+				&::before {
+					cursor: pointer;
+					color: #FFFFFF;
+					background-color: #D8DADC;
+					height: 25px;
+					width: 25px;
+					display: inline-block;
+					content: attr(data-before);
+					position: absolute;
+					top: -17px;
+					line-height: 25px;
+					text-align: center;
+				}
+			}
+		}
+	}
+	/* = End of Activities = */
+	/* <<<<< ======================================== */
+	
+	/* >>>>> ======================================== */
+	/* = General styles = */
+	/* ----- Header section ----- */
+	.header-section {
+		color: $font-color-primary;
+		font-size: 25px;
+		font-weight: 500;
+		margin-top: 15px;
+		margin-bottom: 10px;
+	}
+	/* ----- End of Header section ----- */
+	
+	/* ----- Skype Help ----- */
+	.skype-help {
+		color: $primary-color;
+		font-size: 18px;
+	}
+	/* ----- End of Skype Help ----- */
+	
+	.nav-tabs {
+		margin-bottom: 15px;
+	}
+	
+	.flex-middle {
+		display: flex;
+	}
+	/* = End of General styles = */
+	/* <<<<< ======================================== */
+	
+	/* >>>>> ======================================== */
+	/* = Forms = */
+	.input-grp {
+		margin-bottom: 10px;
+	}
+	.checkbox {
+		width: 34px;
+		height: 34px;
+		margin: 0;
+	}
+	input[type="checkbox"] {
+		margin-right: 5px;
+	}
+	.form-inline {
+		margin-bottom: 10px;
+		
+		.form-group {
+			margin-right: 15px;
+		}
+		
+		span {
+			margin: 0 10px;
+		}
+	}
+	/* = End of Forms = */
+	/* <<<<< ======================================== */
+	
+	/* >>>>> ======================================== */
+	/* = Box = */
+	.box {
+		border: 1px solid #DDDDDD;
+		border-radius: 5px;
+		margin-bottom: 15px;
+		// margin-bottom: 15px;
+		&.icon {
+			.box-head {
+				& > .fa {
+					margin-right: 15px;
+					font-size: 23px;
+				}
+			}
+		}
+		&.success {
+			.box-head {
+				color: #689C68;
+			}
+			.box-body {
+				color: #689C68;
+			}
+		}
+		&.warning {
+			.box-head {
+				color: #C9A972;
+			}
+			.box-body {
+				color: #C9A972;
+			}
+		}
+		&.danger {
+			.box-head {
+				color: #B94A48;
+			}
+			.box-body {
+				color: #B94A48;
+			}
+		}
+		.box-head {
+			cursor: pointer;
+			background-color: #F2F3F7;
+			color: $font-color-primary;
+			font-weight: 600;
+			font-size: 17px;
+			padding: 10px 20px;
+			border-bottom: 1px solid #DDDDDD;
+		}
+		.box-body {
+			padding: 20px;
+		}
+		.page-actions {
+			margin-bottom: 0;
+		}
+	}
+	/* = End of Box = */
+	/* <<<<< ======================================== */
+	
+	/* >>>>> ======================================== */
+	/* = List = */
+	.list {
+		margin: 0;
+		padding: 0 0 0 20px;
+		li {
+			margin-bottom: 15px;
+			.child {
+				margin: 0;
+				padding: 0;
+				margin-top: 10px;
+				.row {
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
+	/* = End of List = */
+	/* <<<<< ======================================== */
+}
+
+/* ======================================== >>>>> */
+/* = Datatables = */
+/* ======================================== >>>>> */
+
+div.dataTables_wrapper div.dataTables_filter input {
+	margin-left: 0;
+}
+
+.dataTables_filter {
+	.input-group {
+		margin-right: 10px;
+		
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+/* ======================================== >>>>> */
+/* = App list = */
+/* ======================================== >>>>> */
+
+.apps-list {
+	.item {
+		margin-bottom: 30px;
+		
+		.wrapper {
+			border: 1px solid #D8E1E4;
+			background-color: $primary-bg;
+			padding: 15px;
+			
+			.info {
+				margin-bottom: 30px;
+			}
+			.image {
+				img {
+					width: 100%;
+				}
+			}
+			
+			.title {
+				margin-bottom: 15px;
+				font-size: 20px;
+				color: $font-color-primary;
+				font-weight: 800;
+				
+				a:hover {
+					text-decoration: none;
+				}
+			}
+			
+			.description {
+				font-size: 13px;
+				
+				p {
+					margin-bottom: 15px;
+				}
+				
+				h3 {
+					margin-top: 0;
+					margin-bottom: 15px;
+				}
+				
+				.image-carousel {
+					margin: 0 50px;
+					margin-bottom: 30px;
+					
+					.slick-prev {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						left: -35px;
+						background: none;
+						border: none;
+						font-size: 50px;
+					}
+					
+					.slick-next {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						right: -35px;
+						background: none;
+						border: none;
+						font-size: 50px;
+					}
+					
+					img {
+						max-height: 200px;
+					}
+					
+					.slick-slide {
+						margin: 0 10px;
+					}
+				}
+			}
+			
+			.more {
+				font-weight: 500;
+				margin-top: 15px;
+				
+				a:hover, a:active, a:focus {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+/* ======================================== >>>>> */
+/* = Email Marketing = */
+/* ======================================== >>>>> */
+
+.email-marketing {
+	padding: 30px 0;
+	
+	.total-recipients {
+		background-color: lighten($primary-color, 10);
+		display: inline-block;
+		max-width: 500px;
+		width: 100%;
+		padding: 30px;
+		border-radius: 4px;
+		color: #FFFFFF;
+		margin-bottom: 30px;
+		font-size: 25px;
+	}
+	
+	.compose-email {
+		.actions {
+			margin-bottom: 15px;
+			
+			button {
+				margin-right: 5px;
+				
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	
+}
+
+/* ======================================== >>>>> */
+/* = Card Section = */
+/* ======================================== >>>>> */
+
+.card {
+	display: block;
+	text-decoration: none;
+	padding: 25px 10px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	transition: all .3s ease;
+	
+	h1 {
+		margin: 0;
+		margin-bottom: 5px;
+	}
+	
+	p {
+		margin: 0;
+		font-weight: 300;
+	}
+	
+	&:hover, &:active, &:focus {
+		text-decoration: none;
+	}
+	
+	&.blue {
+		background-color: $primary-color;
+		color: #FFFFFF;
+		
+		&:hover {
+			background-color: lighten($primary-color, 15);
+		}
+	}
+}
+
+/* ======================================== >>>>> */
+/* = Row section = */
+/* ======================================== >>>>> */
+
+.row {
+	&.section {
+		margin-bottom: 20px;
+		
+		.section-title {
+			font-size: 22px;
+			color: $font-color-primary;
+			font-weight: 500;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+/* ======================================== >>>>> */
+/* = My tickets = */
+/* ======================================== >>>>> */
+
+.my-tickets {
+	.item {
+		display: block;
+		padding: 10px 20px;
+		position: relative;
+		margin-bottom: 10px;
+		color: $font-color-primary;
+		cursor: pointer;
+		
+		&:hover, &:active, &:focus, &.active {
+			text-decoration: none !important;
+			
+			&:before {
+				width: 10px;
+			}
+		}
+		
+		&:before {
+			height: 100%;
+			width: 5px;
+			background-color: #CCCCCC;
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			transition: all .3s ease;
+		}
+		
+		.info {
+			font-size: 12px;
+			color: $primary-color;
+		}
+		
+		.short {
+			color: $font-color-primary;
+		}
+		
+		&.green {
+			&:before {
+				background-color: #5CB85C;
+			}
+		}
+		
+		&.red {
+			&:before {
+				background-color: #D9534F;
+			}
+		}
+	}
+}
+
+.matching-results {
+	margin-bottom: 10px;
+
+	&__number {
+		font-weight: 600;
+	}
+}
+
+.my-tickets-messages {
+	position: relative;
+	max-height: 500px;
+	overflow-y: scroll;
+	
+	& > .message {
+		background-color: rgba($primary-color, 0.05);
+		border-radius: 5px;
+		padding: 10px;
+		margin-bottom: 10px;
+		margin-right: 30%;
+		position: relative;
+		
+		&:last-child {
+			margin-bottom: 30px;
+		}
+		
+		&:before {
+			display: block;
+			content: '';
+			position: absolute;
+			left: -10px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 0;
+			height: 0;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+			border-right: 10px solid rgba($primary-color, 0.05);
+		}
+		
+		&.my {
+			margin-right: 0;
+			margin-left: 30%;
+			
+			&:before {
+				right: -10px;
+				left: auto;
+				border-right: none;
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				border-left: 10px solid rgba($primary-color, 0.05);
+			}
+		}
+		
+		.info {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+			
+			.image {
+				border-radius: 50%;
+				margin-right: 10px;
+			}
+			
+			.author {
+				font-size: 16px;
+				margin-right: 10px;
+			}
+			
+			.date {
+				font-size: 11px;
+			}
+		}
+		
+		.message {
+			font-size: 13px;
+		}
+	}
+}
+
+/* ======================================== >>>>> */
+/* = LPG Dashboard = */
+/* ======================================== >>>>> */
+.dashboard {
+	.dashboard-title {
+		font-size: 32px;
+		margin-bottom: 15px;
+		color: $font-color-primary;
+	}
+	
+	.dashboard-card {
+		background-color: #3278B5;
+		color: #FFFFFF;
+		padding: 15px;
+		height: 130px;
+		position: relative;
+		border-radius: 3px;
+		margin-bottom: 30px;
+		
+		&.system {
+			height: auto;
+			
+			.status {
+				position: absolute;
+				background-color: rgba(#fff, 0.3);
+				width: 100%;
+				top: 0;
+				left: 0;
+				text-align: center;
+				padding: 5px 0;
+			}
+			
+			.count {
+				position: relative;
+				margin-top: 50px;
+				margin-bottom: 20px;
+				left: 0;
+				text-align: center;
+				width: 100%;
+			}
+		}
+		
+		&:hover {
+			.count {
+				.status {
+					.fa-level-up {
+						bottom: 5px !important;
+					}
+					
+					.fa-level-down {
+						top: 5px;
+					}
+				}
+			}
+		}
+		
+		a {
+			color: #FFFFFF;
+			
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
+		}
+		
+		.count {
+			font-size: 45px;
+			line-height: 45px;
+			font-weight: 600;
+			position: absolute;
+			display: inline-block;
+			right: 50px;
+			top: 15px;
+			text-align: right;
+			
+			.status {
+				position: absolute;
+				right: -40px;
+				font-size: 60px;
+				top: -5px;
+				opacity: 0.3;
+				transition: all .3s ease;
+				
+				.fa {
+					position: relative;
+					transition: all .3s ease;
+				}
+				
+				.fa-level-up {
+					bottom: 0;
+				}
+				
+				.fa-level-down {
+					top: 0;
+				}
+			}
+			
+			.title {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 14px;
+			}
+		}
+		
+		.more {
+			position: absolute;
+			background-color: rgba(#000, 0.3);
+			left: 0;
+			bottom: 0;
+			padding: 5px 15px;
+			border-bottom-left-radius: 3px;
+			border-top-right-radius: 3px;
+			transition: all .3s ease;
+			
+			&:hover {
+				background-color: rgba(#000, 0.4);
+			}
+		}
+		
+		.add-new-ticket {
+			input {
+				width: 100%;
+				border: none;
+				border-bottom: 1px dashed $font-color-primary;
+			}
+			
+			textarea {
+				width: 100%;
+				border: none;
+			}
+			
+			.actions {
+				display: flex;
+				
+				.add-ticket {
+					flex: 1;
+					
+					button {
+						width: 100%;
+						background-color: #6EB249;
+						border: none;
+						height: 30px;
+						
+						&:hover {
+							background-color: darken(#6EB249, 3);
+						}
+					}
+				}
+				
+				.level-ticket {
+					flex: 1;
+					
+					select {
+						border: none;
+						height: 30px;
+						color: $font-color-primary;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ======================================== >>>>> */
+/* = Support chat = */
+/* ======================================== >>>>> */
+
+.support-chat {
+	@include display(flex);
+	min-height: 600px;
+	
+	.list-chats {
+		@include flex(1);
+		background-color: $darken-bg;
+		
+		.title {
+			margin-top: 10px;
+			margin-bottom: 5px;
+			padding: 5px 15px;
+			font-weight: 600;
+			font-size: 16px;
+		}
+		
+		.chat {
+			padding: 5px 20px;
+			cursor: pointer;
+			transition: all .3s ease;
+			position: relative;
+			
+			&.active {
+				background-color: #FF3034;
+				color: #FFFFFF;
+			}
+			
+			&:hover {
+				&:not(.active) {
+					background: darken($darken-bg, 5);
+				}
+				
+				.close {
+					opacity: 0.5;
+				}
+			}
+			
+			.unread {
+				margin: 0 5px;
+				font-weight: 600;
+				font-size: 12px;
+				background-color: #FFFFFF;
+				color: #FF3034;
+				padding: 0 5px;
+				border-radius: 5px;
+			}
+			
+			.close {
+				color: #FFFFFF;
+				opacity: 0;
+				font-size: 12px;
+				position: absolute;
+				top: 50%;
+				right: 20px;
+				transform: translateY(-50%);
+				transition: all .3s ease;
+				
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	.chat-window {
+		@include flex(4);
+		position: relative;
+		@include display(flex);
+		
+		& > .message {
+			font-size: 16px;
+			font-weight: 500;
+			padding: 15px;
+			text-align: center;
+			@include align-self(center);
+			@include flex(1);
+		}
+		
+		textarea, input {
+			padding: 8px 15px;
+			border-radius: 5px;
+			border: 1px solid #EEEEEE;
+			transition: all .3s ease;
+			margin-right: 20px;
+			
+			&:hover, &:active, &:focus {
+				border-color: $primary-color;
+			}
+		}
+		
+		.wrapper {
+			width: 100%;
+		}
+		
+		.chat-info {
+			padding: 15px;
+			@include display(flex);
+			@include align-items(center);
+			border-bottom: 1px solid #EEEEEE;
+			margin-bottom: 20px;
+			width: 100%;
+			
+			.info {
+				@include flex(7);
+				
+				.title {
+					font-weight: 600;
+					font-size: 18px;
+					color: $font-color-primary;
+				}
+				
+				.status {
+					.fa {
+						font-size: 10px;
+						margin-right: 5px;
+						
+						&.active {
+							color: lighten(green, 15);
+						}
+					}
+				}
+			}
+			
+			.actions {
+				@include display(flex);
+				@include align-items(center);
+				
+				.close {
+					cursor: pointer;
+					color: $font-color-primary;
+					font-size: 25px;
+				}
+			}
+		}
+		
+		.list-messages {
+			padding: 15px;
+			max-height: 405px;
+			height: 100%;
+			overflow-y: scroll;
+			
+			.message {
+				margin-bottom: 15px;
+				width: 70%;
+				padding: 10px;
+				border-radius: 3px;
+				transition: all .3s ease;
+				background-color: #E6E6E6;
+				
+				&.my {
+					position: relative;
+					left: 30%;
+					background-color: #177FFE;
+					
+					.info {
+						.author {
+							color: #FFFFFF;
+						}
+						
+						.date {
+							color: rgba(#fff, 0.8);
+						}
+					}
+					
+					.content {
+						color: #FFFFFF;
+					}
+				}
+				
+				&.unread {
+					background-color: lighten($primary-color, 50);
+					
+					&.my {
+						.info {
+							.author {
+								color: $font-color-primary;
+							}
+							
+							.date {
+								color: #768693;
+							}
+						}
+						
+						.content {
+							color: $font-color-primary;
+						}
+						
+					}
+				}
+				
+				.info {
+					.author {
+						font-size: 15px;
+						font-weight: 600;
+						color: $font-color-primary;
+					}
+					
+					.date {
+						font-size: 12px;
+					}
+				}
+				
+				.content {
+					color: $font-color-primary;
+				}
+			}
+		}
+		
+		.chat-form {
+			padding: 15px;
+			width: 100%;
+			bottom: 0;
+			position: absolute;
+			
+			textarea {
+				height: 60px;
+				width: 100% !important;
+			}
+		}
+	}
+}
+
+#new-main {
+	display: flex;
+	min-height: calc(100% - 105px);
+	//overflow: hidden;
+	
+	#sidebar {
+		width: 300px;
+		min-height: calc(100% - 35px);
+		border-right: 1px solid #DDDDDD;
+		position: relative;
+		padding-top: 16px;
+		background-color: #F0EEEE;
+		
+		.logo {
+			padding: 0 16px;
+			margin-bottom: 16px;
+			
+			img {
+				width: 100%;
+			}
+		}
+		
+		.search {
+			padding: 0 16px;
+			margin-bottom: 16px;
+		}
+		
+		.footer {
+			position: absolute;
+			bottom: 50px;
+			text-align: center;
+			width: 100%;
+		}
+		
+		.navigation {
+			a {
+				padding: 0 16px;
+				
+				.fa {
+					margin-right: 7px;
+				}
+			}
+			
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				
+				li {
+					&.has-child {
+						& > a {
+							&:after {
+								position: absolute;
+								right: 16px;
+								margin-left: 5px;
+								content: "\f0d9";
+								font-family: "FontAwesome";
+							}
+						}
+						
+						&.opened {
+							& > a {
+								&:after {
+									content: "\f0d7";
+								}
+							}
+							
+							& > .child {
+								display: block;
+							}
+						}
+						
+						& > .child {
+							background-color: #FFFFFF;
+							padding: 5px 0;
+							display: none;
+							
+							li {
+								& > a {
+									line-height: 25px;
+									color: #777777;
+									display: block;
+									
+									&:hover, &:active, &:focus {
+										color: #000000;
+										text-decoration: none;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			& > ul {
+				& > li {
+					& > a {
+						display: block;
+						color: #444444;
+						line-height: 35px;
+						font-weight: 500;
+						
+						&:hover, &:active, &:focus {
+							background-color: #FFFFFF;
+							text-decoration: none;
+							color: #000000;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	#content {
+		//max-height: calc(100% - 35px);
+		height: 100%;
+		max-width: 100%;
+		width: 100%;
+		position: relative;
+		padding-top: 16px;
+		//overflow-y: scroll;
+		
+		.page-title {
+			margin-bottom: 5px;
+		}
+		
+		.breadcrumbs {
+			font-size: 12px;
+			margin-bottom: 16px;
+			
+			@media (min-width: 640px) {
+				font-size: 13px;
+			}
+			
+			a {
+				text-decoration: none;
+				&:after {
+					margin-left: 10px;
+					margin-right: 5px;
+					font-family: "FontAwesome";
+					content: "\f105";
+				}
+				.fa {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}

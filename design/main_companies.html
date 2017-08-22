@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link href="assets/css/app.min.css" rel="stylesheet">
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+		<script src="assets/js/libs.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
+	</head>
+	<body>
+		<section id="header">
+			<script>
+				$('#header').load('parts/general/header.html');
+			</script>
+		</section>
+		<section id="new-main">
+			<div id="content">
+				<main>
+
+					<div class="container-fluid">
+						<div class="row">
+
+							<!-- BEGIN side navigation -->
+							<style>
+							.sidenav { text-align: center; }
+							.sidenav button { width: 100%; max-width: 200px; }
+							</style>
+							<div class="col-xs-12 col-md-2 sidenav">
+								<p>
+								<a href="main_companies.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-building-o"></i> Companies
+								</a>
+								</p>
+								<p>
+								<a href="main_users.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-users"></i> Users
+								</a>
+								</p>
+								<p>
+								<a href="main_devices.html" class="btn btn-primary btn-lg btn-icon btn-block">
+									<i class="fa fa-desktop"></i> Devices
+								</a>
+								</p>
+							</div>
+							<!-- END side navigation -->
+
+							<!-- BEGIN side navigation -->
+							<div class="col-xs-12 col-md-10">
+
+								<!-- BEGIN content head-->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="page-title">
+											Companies
+										</div>
+										<div class="breadcrumbs">
+											<a href="index.html"><i class="fa fa-home"></i>Home</a>
+											<span>Companies</span>
+										</div>
+									</div>
+								</div>
+								<!-- END content head-->
+
+								<!-- BEGIN filter -->
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="box icon">
+											<div class="box-head">
+												<i class="fa fa-search"></i>Filter
+												<div class="actions pull-right">
+													<a class="btn btn-default btn-xs btn-collapse"> <i class="fa fa-plus"></i> </a>
+												</div>
+											</div>
+											<div class="box-body" style="display: none">
+												<div class="row">
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label for="filter_name">Name</label>
+															<input type="text" class="form-control" id="filter_name">
+														</div>
+														<div class="form-group">
+															<label for="filter_email">E-mail</label>
+															<input type="text" class="form-control" id="filter_email">
+														</div>
+													</div>
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label for="filter_address">Address</label>
+															<input type="text" class="form-control" id="filter_address">
+														</div>
+														<div class="form-group">
+															<label for="filter_comment">Comment</label>
+															<input type="text" class="form-control" id="filter_comment">
+														</div>
+													</div>
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label>IP</label>
+															<select class="form-control">
+																<option>Any (default)</option>
+																<option>127.0.0.1</option>
+															</select>
+														</div>
+														<div class="form-group">
+															<label>Ports</label>
+															<select class="form-control">
+																<option>Any (default)</option>
+																<option>:8080</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="page-actions pull-right">
+															<!--
+															<div class="btn-group">
+																<button type="button" class="btn btn-default btn-md btn-icon dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	Saved Filters <span class="caret"></span>
+																</button>
+																<ul class="dropdown-menu">
+																	<li><a href="#">Filter Name 1</a></li>
+																	<li><a href="#">Filter Name 2</a></li>
+																	<li><a href="#">Filter Name 3</a></li>
+																	<li><a href="#">Filter Name 4</a></li>
+																</ul>
+															</div>
+															<button type="button" class="btn btn-default btn-md btn-icon" data-toggle="modal" data-target="#saveFilter">
+																<i class="fa fa-save"></i>Save Filter
+															</button>
+															-->
+															<button type="button" class="btn btn-default btn-md btn-icon">
+																<i class="fa fa-close"></i>Clear
+															</button>
+															<button type="button" class="btn btn-primary btn-md btn-icon">
+																<i class="fa fa-search"></i>Filter
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- END filter -->
+
+								<!-- BEGIN content-->
+								<div class="row">
+
+									<div class="col-xs-12">
+										<div id="matching-results" class="matching-results">
+											Number of Matching Records: <span class="matching-results__number">25</span>
+										</div>
+									</div>
+
+									<div class="col-xs-12">
+										<div class="page-title">
+											<div class="actions">
+												<a href="#" data-toggle="modal" data-target="#modalAdd" class="btn btn-success btn-md btn-icon"><i class="fa fa-plus-circle"></i> New company</a>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-xs-12">
+										<table id="companiesTable" class="table table-stripped">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Phone</th>
+													<th>E-mail</th>
+													<th>IP range</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Store #1</td>
+													<td>+1 111 11 111-11-11</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">store@storeone.com</a></td>
+													<td>10.0.1.1 - 10.0.1.255</td>
+												</tr>
+												<tr>
+													<td>Store #2</td>
+													<td>+2 222 22 222-22-22</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">store@storetwo.com</a></td>
+													<td>11.0.1.1 - 11.0.1.255</td>
+												</tr>
+												<tr>
+													<td>Store #3</td>
+													<td>+3 333 33 333-33-33</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">store@storethree.com</a></td>
+													<td>12.0.1.1 - 12.0.1.255</td>
+												</tr>
+												<tr>
+													<td>Store #4</td>
+													<td>+4 444 44 444-44-44</td>
+													<td><a href="#" data-toggle="modal" data-target="#modalEdit">store@storefour.com</a></td>
+													<td>13.0.1.1 - 13.0.1.255</td>
+												</tr>
+											</tbody>
+										</table>
+										<!--
+										<script>
+											$(document).ready(function() {
+												$('#companiesTable').DataTable({
+													"fnInitComplete": function(settings) {
+														var selector = settings.oInstance.selector + "_filter";
+														var $searchForm = '<div class="form-inline">' +
+															'<div class="input-group">' +
+															'<span class="input-group-btn">' +
+															'<button class="btn btn-primary btn-sm" type="button">' +
+															'<i class="fa fa-search"></i>' +
+															'</button>' +
+															'</span>' +
+															'<input type="text" data-table-instance="' + settings.oInstance.selector + '" class="form-control input-sm" placeholder="Search for...">' +
+															'</div>' +
+															'</div>';
+														$(selector).html($searchForm);
+														$(selector).find('input').keypress(function(e) {
+															if (e.which == 13) $($(selector).find('input').data('table-instance')).DataTable().search($(selector).find('input').val()).draw();
+														});
+														$(selector).find('button').click(function() {
+															$($(selector).find('input').data('table-instance')).DataTable().search($(selector).find('input').val()).draw();
+														});
+														var exportButton = '<div class="input-group"><a href="#." class="btn btn-primary btn-sm btn-icon"><i class="fa fa-download"></i>Export</a></div>';
+														$(selector).find('.form-inline').prepend(exportButton);
+													}
+												});
+											});
+										</script>
+										-->
+									</div>
+
+								</div>
+								<!-- END content-->
+
+							</div>
+						</div>
+					</div>
+
+					<!-- BEGIN modal -->
+					<div id="modalProfile" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close"
+										data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Profile</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="profile_firstName">First Name</label>
+										<input type="text" class="form-control" id="profile_firstName">
+									</div>
+									<div class="form-group">
+										<label for="profile_secondName">Last Name</label>
+										<input type="text" class="form-control" id="profile_secondName">
+									</div>
+									<div class="form-group">
+										<label for="profile_email">E-mail</label>
+										<input type="text" class="form-control" id="profile_email">
+									</div>
+									<div class="form-group">
+										<label for="profile_password">Password</label>
+										<input type="password" class="form-control" id="profile_password">
+									</div>
+									<div class="form-group">
+										<label for="profile_confirmPassword">Confirm Password</label>
+										<input type="password" class="form-control" id="profile_confirmPassword">
+									</div>
+									<div class="form-group">
+										<label for="profile_phone">Phone</label>
+										<input type="text" class="form-control" id="profile_phone">
+									</div>
+									<div class="form-group">
+										<label for="profile_mobile">Mobile</label>
+										<input type="text" class="form-control" id="profile_mobile">
+									</div>
+									<div class="form-group">
+										<p>
+										Get VPN Key: <a href="#">download</a>
+										</p>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="modalAdd" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close"
+										data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Add company</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="add_name">Name</label>
+										<input type="text" class="form-control" id="add_name">
+									</div>
+									<div class="form-group">
+										<label for="add_phone">Phone</label>
+										<input type="text" class="form-control" id="add_phone">
+									</div>
+									<div class="form-group">
+										<label for="add_email">E-mail</label>
+										<input type="text" class="form-control" id="add_email">
+									</div>
+									<!--
+									<div class="form-group">
+										<label for="add_ports">List of ports opened on devices</label>
+										<button>25</button> <button>143</button> <button>110</button> <button>22</button>
+									</div>
+									-->
+									<div class="form-group">
+										<label for="add_ipRange">IP range</label>
+										<input type="text" class="form-control" id="add_ipRange" readonly="readonly" value="125.0.40.2 - 125.0.41.20">
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-success" data-dismiss="modal">Add</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="modalEdit" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close"
+										data-dismiss="modal">&times;</button>
+									<h4 class="modal-title">Edit company</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="edit_name">Name</label>
+										<input type="text" class="form-control" id="edit_name" value="Store #1">
+									</div>
+									<div class="form-group">
+										<label for="edit_phone">Phone</label>
+										<input type="text" class="form-control" id="edit_phone" value="+1 111 11 111-11-11">
+									</div>
+									<div class="form-group">
+										<label for="edit_email">E-mail</label>
+										<input type="text" class="form-control" id="edit_email" value="store@storeone.com">
+									</div>
+									<div class="form-group">
+										<label for="edit_ports">List of ports opened on devices</label>
+										<button>25</button> <button>143</button> <button>110</button> <button>22</button>
+									</div>
+									<div class="form-group">
+										<label for="edit_ipRange">IP range</label>
+										<input type="text" class="form-control" id="edit_ipRange" readonly="readonly" value="10.0.1.1 - 10.0.1.255">
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Remove</button>
+									<button type="button" class="btn btn-default">Reset</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- END modal -->
+
+				</main>
+			</div>
+		</section>
+		<section id="footer">
+			<footer class="vertical-align">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-8 col-xs-offset-2 text-center">
+							© 2017 Copyright. Not for distribution to third parties.
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+				$('#footer').load('parts/general/footer.html');
+			</script>
+		</section>
+	</body>
+</html>

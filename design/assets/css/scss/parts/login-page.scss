@@ -1,0 +1,24 @@
+body.login-page {
+	background-color: #D9E0E2;
+	
+	.login-box {
+		width: 360px;
+		margin: 7% auto;
+		
+		.login-logo {
+			text-align: center;
+			margin-bottom: 25px;
+			
+			img {
+				margin: 0 auto;
+			}
+		}
+		
+		.login-box-body {
+			background: #FFFFFF;
+			padding: 20px;
+			border-top: 0;
+			color: #666666;
+		}
+	}
+}
